@@ -26,8 +26,8 @@ while True:
   full_bodys = human_detect.detectMultiScale(gray_frame, scaleFactor = 1.1,
 minNeighbors = 3, minSize = (20, 20), flags = cv2.CASCADE_SCALE_IMAGE)
   temp_frame = frame.copy() #temporary frame
-  for (x, y, width, height) in full_bodys:
-    cv2.rectangle(temp_frame, (x, y), (x + width, y + height), (0, 255, 255), 2)
+  for (x, y, w, h) in full_bodys:
+    cv2.rectangle(temp_frame, (x, y), (x + w, y + h), (0, 255, 255), 2)
     counterPeople += 1
 
   print("Counting..."+str(counterPeople)) 
